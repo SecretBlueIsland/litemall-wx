@@ -13,7 +13,7 @@ export default {
     "title": "Home",
     "lang": "English",
     "translation": [
-      "search products,",
+      "search products, ",
       " items in total",
       "discount coupon",
       "Brand manufacturer direct supply"
@@ -23,8 +23,8 @@ export default {
     "title": "INICIO",
     "lang": "español",
     "translation": [
-      "search products,",
-      " items in total",
+      "Qué buscas? ",
+      " productos",
       "discount coupon",
       "Brand manufacturer direct supply"
     ]

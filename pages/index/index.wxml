@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<button bindtap="toggle" style="width:100rpx;margin-right:0;font-size:16rpx">{{lang}}</button>
+<button bindtap="toggle" style="width:100rpx;margin-left:20rpx;font-size:16rpx">{{lang}}</button>
 <view class="container">
 <view class="search">
     <navigator url="/pages/search/search" class="input">

@@ -7,14 +7,14 @@
   </view>
   <view class='login' wx:else>
     <view class="service-policy">
-      <view class="item">30天无忧退货</view>
-      <view class="item">48小时快速退款</view>
-      <view class="item">满88元免邮费</view>
+      <view class="item">{{translation[2]}}</view>
+      <view class="item">{{translation[3]}}</view>
+      <view class="item">{{translation[4]}}</view>
     </view>
     <view class="no-cart" wx:if="{{cartGoods.length <= 0}}">
       <view class="c">
-        <text>空空如也~</text>
-        <text>去添加点什么吧</text>
+        <text>{{translation[5]}}</text>
+        <text>{{translation[6]}}</text>
       </view>
     </view>
     <view class="cart-view" wx:else>
@@ -30,7 +30,7 @@
                     <text class="name">{{item.goodsName}}</text>
                     <text class="num">x{{item.number}}</text>
                   </view>
-                  <view class="attr">{{ isEditCart ? '已选择:' : ''}}{{item.specifications||''}}</view>
+                  <view class="attr">{{ isEditCart ? translation[7] : ''}}{{item.specifications||''}}</view>
                   <view class="b">
                     <text class="price">￥{{item.price}}</text>
                     <view class="selnum">
@@ -47,12 +47,12 @@
 
       </view>
       <view class="cart-bottom">
-        <van-checkbox value="{{ checkedAllStatus }}" bind:change="checkedAll">全选（{{cartTotal.checkedGoodsCount}}）</van-checkbox>
+        <van-checkbox value="{{ checkedAllStatus }}" bind:change="checkedAll">{{translation[8]}}（{{cartTotal.checkedGoodsCount}}）</van-checkbox>
         <view class="total">{{!isEditCart ? '￥'+cartTotal.checkedGoodsAmount : ''}}</view>
         <view class='action_btn_area'>
-          <view class="{{!isEditCart ? 'edit' : 'sure'}}" bindtap="editCart">{{!isEditCart ? '编辑' : '完成'}}</view>
-          <view class="delete" bindtap="deleteCart" wx:if="{{isEditCart}}">删除({{cartTotal.checkedGoodsCount}})</view>
-          <view class="checkout" bindtap="checkoutOrder" wx:if="{{!isEditCart}}">下单</view>
+          <view class="{{!isEditCart ? 'edit' : 'sure'}}" bindtap="editCart">{{!isEditCart ? translation[9] : translation[10]}}</view>
+          <view class="delete" bindtap="deleteCart" wx:if="{{isEditCart}}">{{translation[11]}}({{cartTotal.checkedGoodsCount}})</view>
+          <view class="checkout" bindtap="checkoutOrder" wx:if="{{!isEditCart}}">{{translation[12]}}</view>
           <!-- </view>  -->
         </view>
       </view>

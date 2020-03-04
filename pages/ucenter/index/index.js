@@ -1,12 +1,16 @@
 var util = require('../../../utils/util.js');
 var api = require('../../../config/api.js');
 var user = require('../../../utils/user.js');
+
+import { interpret } from '../../../utils/wxapp-i18n'
+import locale from './locale'
+
 var app = getApp();
 
 Page({
   data: {
     userInfo: {
-      nickName: '点击登录',
+      nickName: '',
       avatarUrl: '/static/images/my.png'
     },
     order: {
@@ -24,19 +28,26 @@ Page({
 
   },
   onShow: function() {
-
+    interpret(this, locale)
     //获取用户的登录信息
     if (app.globalData.hasLogin) {
-      let userInfo = wx.getStorageSync('userInfo');
-      this.setData({
-        userInfo: userInfo,
-        hasLogin: true
-      });
+      let _this = this
+      wx.getStorage({
+        key: 'userInfo',
+        success(res) {
+          let userInfo = res.data
+          _this.setData({
+            userInfo: userInfo,
+            hasLogin: true
+          })
+          let userLogin = userInfo.nickName
+          _this.setData({userLogin})
+        }
+      })
 
-      let that = this;
       util.request(api.UserIndex).then(function(res) {
         if (res.errno === 0) {
-          that.setData({
+          _this.setData({
             order: res.data.order
           });
         }

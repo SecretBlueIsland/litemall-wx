@@ -2,6 +2,9 @@ var api = require('../../../config/api.js');
 var util = require('../../../utils/util.js');
 var user = require('../../../utils/user.js');
 
+import { interpret } from '../../../utils/wxapp-i18n'
+import locale from './locale'
+
 var app = getApp();
 Page({
   onLoad: function(options) {
@@ -14,6 +17,7 @@ Page({
   },
   onShow: function() {
     // 页面显示
+	interpret(this, locale)
   },
   onHide: function() {
     // 页面隐藏
