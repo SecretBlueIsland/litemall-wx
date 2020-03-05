@@ -22,8 +22,8 @@ App({
 
     let language = wx.getStorageSync('language')
     if (!language) {
-      //默认中文
-      wx.setStorageSync('language', 'zh-CN')
+      //默认西班牙语
+      wx.setStorageSync('language', 'es')
     }
   },
   onShow: function(options) {

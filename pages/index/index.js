@@ -3,7 +3,7 @@ const api = require('../../config/api.js');
 const user = require('../../utils/user.js');
 
 //国际化
-import { interpret, changeLanguage } from '../../utils/wxapp-i18n'
+import { interpret } from '../../utils/wxapp-i18n'
 import locale from './locale'
 //获取应用实例
 const app = getApp();
@@ -146,9 +146,5 @@ Page({
         util.showErrorToast(res.errmsg);
       }
     })
-  },
-
-  toggle(){
-    changeLanguage(this,locale)
   }
 })

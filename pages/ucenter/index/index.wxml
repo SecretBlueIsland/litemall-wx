@@ -1,9 +1,10 @@
 <view class="container">
-  <view class="profile-info" bindtap="goLogin">
-    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-    <view class="info">
+  <view class="profile-info">
+    <image class="avatar" bindtap="goLogin" src="{{userInfo.avatarUrl}}"></image>
+    <view class="info" bindtap="goLogin">
       <text class="name">{{userLogin}}</text>
     </view>
+    <view bindtap="toggle" class="toggle">{{lang}}</view>
   </view>
 
   <view class='separate'></view>
@@ -35,10 +36,10 @@
         <image class='user_column_item_image' src='/static/images/comment.png'></image>
         <view class='user_column_item_text'>{{translation[4]}}</view>
       </view>
-      <view class='user_column_item' bindtap='goAfterSale'>
+      <!--view class='user_column_item' bindtap='goAfterSale'>
         <image class='user_column_item_image' src='/static/images/aftersale.png'></image>
         <view class='user_column_item_text'>{{translation[5]}}</view>
-      </view>
+      </view-->
     </view>
   </view>
 

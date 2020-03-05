@@ -2,6 +2,7 @@ export default {
   "zh-CN": {
     "title": "个人中心",
     "userLogin": "点击登录",
+    "lang": "中文",
     "translation": [
       "我的订单",
       "待付款",
@@ -26,7 +27,8 @@ export default {
   },
   "en": {
     "title": "Me",
-    "userLogin":"点击登录",
+    "userLogin":"LOGIN",
+    "lang": "English",
     "translation": [
       "我的订单",
       "待付款",
@@ -52,6 +54,7 @@ export default {
   "es": {
     "title": "MI CUENTA",
     "userLogin": "INICIA SESIÓN",
+    "lang": "español",
     "translation": [
       "MI ORDEN",
       "Por Pagar",

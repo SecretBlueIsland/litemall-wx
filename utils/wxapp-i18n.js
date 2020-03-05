@@ -18,9 +18,9 @@ export function interpret(self, locale){
 
 export function changeLanguage(self,locale){
   const langSheet = {
-    '中文': 'zh-CN',
+    'español': 'es',
     'English': 'en',
-    'español': 'es'
+    '中文': 'zh-CN'
   }
   let list = Object.keys(langSheet)
   wx.showActionSheet({
@@ -28,10 +28,16 @@ export function changeLanguage(self,locale){
     success(res) {
       let tapIndex = res.tapIndex,
           language = langSheet[list[tapIndex]],
-          data = locale[language]
-      self.setData(data)
-      let title = self.data.title
+          data = locale[language],
+          { title, lang, translation } = data
+
       wx.setNavigationBarTitle({ title })
+      self.setData({ lang, translation })
+      if (!getApp().globalData.hasLogin) {
+        let {userLogin} = data
+        self.setData({ userLogin })
+      }
+
       bar[language].split(',', 4).forEach((text, index) => {
         wx.setTabBarItem({ index, text })
       })

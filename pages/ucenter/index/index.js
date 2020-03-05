@@ -2,7 +2,7 @@ var util = require('../../../utils/util.js');
 var api = require('../../../config/api.js');
 var user = require('../../../utils/user.js');
 
-import { interpret } from '../../../utils/wxapp-i18n'
+import { interpret, changeLanguage } from '../../../utils/wxapp-i18n'
 import locale from './locale'
 
 var app = getApp();
@@ -241,5 +241,9 @@ Page({
       }
     })
 
+  },
+
+  toggle() {
+    changeLanguage(this, locale)
   }
 })

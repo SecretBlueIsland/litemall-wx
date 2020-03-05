@@ -1,7 +1,6 @@
 export default {
   "zh-CN": {
     "title": "首页",
-    "lang": "中文",
     "translation": [
       "商品搜索，共",
       "款好物",
@@ -11,7 +10,6 @@ export default {
   },
   "en": {
     "title": "Home",
-    "lang": "English",
     "translation": [
       "search products, ",
       " items in total",
@@ -21,7 +19,6 @@ export default {
   },
   "es": {
     "title": "INICIO",
-    "lang": "español",
     "translation": [
       "Qué buscas? ",
       " productos",
